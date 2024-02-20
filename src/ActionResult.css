@@ -1,0 +1,47 @@
+.result-container {
+  display: flex;
+  align-items: center;
+  /* flex-direction: row;  */
+  background-color: #333;
+  padding: 20px;
+  border-radius: 8px;
+  color: white;
+  max-width: 600px;
+}
+  
+  
+.result-container h3 {
+    margin: 1px 0;
+  }
+  
+.result-container p {
+  font-size: small;
+  margin: 5px 0;
+}
+
+@media (max-width: 768px) {
+  .result-container {
+    flex-direction: column; /* Stack flex items vertically */
+    width: auto; /* Makes the width auto to fit mobile devices */
+    padding: 10px; /* Optional: Adjust padding for mobile devices */
+  }
+
+  .candidate-image {
+    margin-right: 0; /* Remove the margin to the right of the image */
+    margin-bottom: 20px; /* Space between the image and the text when stacked */
+  }
+}
+
+
+.candidate-image {
+  max-width: 300px;
+  height: auto;
+  margin-right: 20px; /* Space between the image and the text */
+}
+
+.candidate-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1; /* This will make the .candidate-info take the remaining space */
+}

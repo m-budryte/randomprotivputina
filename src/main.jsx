@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom/client';
-import ActionSelection from './ActionSelection';
+import SocialShare from './SocialShare';
 import ActionResult from './ActionResult';
 import ptngif from  "./assets/ptn.gif"
 import ppp from "./assets/ppp.png"
@@ -12,12 +12,14 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [showPPP, setShowPPP] = useState(true);
   const [choiceMade, setChoiceMade] = useState(false);
+  const [showSocialShare, setShowSocialShare] = useState(false);
 
   const handleStartAgain = () => {
     setCandidate(null);
     setShowPPP(true);
     setIsLoading(false); // Ensure loading state is reset
-    setChoiceMade(false)
+    setChoiceMade(false);
+    setShowSocialShare(false);
   };
 
   const handleRandomSelection = () => {
@@ -28,7 +30,8 @@ function App() {
       const selectedCandidate = candidates[randomIndex];
       setCandidate(selectedCandidate); // Set the randomly selected candidate
       setIsLoading(false); // Stop showing the loading indicator
-      setChoiceMade(true)
+      setChoiceMade(true);
+      setShowSocialShare(true);
     }, 1500); // Simulate loading time
   };
   
@@ -45,7 +48,13 @@ function App() {
         {isLoading && <p className="intro-text">Магия рандома работает...</p>}
         {choiceMade && !isLoading && <ActionResult candidate={candidate} />}
         {choiceMade && !isLoading && (
-          <button className="button-style" onClick={handleStartAgain}>Еще раз</button>
+            <div className="action-container">
+            {/* Показываем кнопку "Поделиться в соцсетях" только после выбора кандидата */}
+            {showSocialShare && <SocialShare candidateName={candidate.name} candidateImage={candidate.image} />}
+    
+            {/* Кнопка "Еще раз" всегда отображается */}
+            <button className="button-style" onClick={handleStartAgain}>Еще раз</button>
+          </div>
         )}
     </div>
 

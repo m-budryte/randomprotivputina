@@ -1,0 +1,36 @@
+/* SocialShare.css */
+.social-share {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .share-button {
+    cursor: pointer;
+    /* Добавьте сюда стилизацию для кнопки */
+  }
+  
+  .social-options {
+    display: none;
+    position: absolute;
+    bottom: -50px; /* Регулируйте это значение в зависимости от желаемого расположения */
+    left: 0;
+    white-space: nowrap;
+    background-color: #f0f0f0; /* Пример фона */
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  }
+  
+  .social-share:hover .social-options {
+    display: block;
+  }
+  
+  .social-options a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #333; /* Пример цвета текста */
+  }
+  
+  .social-share > * {
+    margin-right: 10px; /* Add some space between icons */
+  }

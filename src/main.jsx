@@ -54,8 +54,14 @@ function App() {
     
             {/* Кнопка "Еще раз" всегда отображается */}
             <button className="button-style" onClick={handleStartAgain}>Еще раз</button>
+            <div style={{ textAlign: 'center', marginTop: '20px' }}>
+            </div>
           </div>
         )}
+          <div style={{ textAlign: 'center', marginTop: '20px' }}></div>
+            <a href="https://www.buymeacoffee.com/mashab" target="_blank" rel="noopener noreferrer">
+               Buy me a coffee ☕️
+          </a>
     </div>
 
     
